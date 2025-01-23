@@ -26,20 +26,19 @@
         .title {
             color: #0A3981;
             margin-bottom: 30px;
+            display: inline-block;
             animation: slide 4s, flipping 4s, pulse 4s;
             animation-delay: 0s, 4s, 8s;
-
-
         }
         
         @keyframes slide {
-            from {transform: translateY(-200px);}  
+            from {transform: translateY(-170px);}  
             to {transform: translateY(0px);}
         }
 
         @keyframes flipping {
-            from {transform: rotateY(0deg);}  
-            to {transform: rotateY(360deg);}
+            from {transform: rotateY(0deg);}
+            to {transform: rotateY(720deg);}
         }
 
         @keyframes pulse {
