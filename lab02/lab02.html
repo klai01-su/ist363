@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kavias Lai Lab 02</title>
+    <style>
+        body {
+            margin: 20px;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #E38E49;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: #D4EBF8;
+            border-radius: 10px;
+            padding: 40px 110px 50px 110px;
+            box-sizing: border-box;
+        }
+
+        .title {
+            color: #0A3981;
+            margin-bottom: 30px;
+            animation: slide 4s, flipping 4s, pulse 4s;
+            animation-delay: 0s, 4s, 8s;
+
+
+        }
+        
+        @keyframes slide {
+            from {transform: translateY(-200px);}  
+            to {transform: translateY(0px);}
+        }
+
+        @keyframes flipping {
+            from {transform: rotateY(0deg);}  
+            to {transform: rotateY(360deg);}
+        }
+
+        @keyframes pulse {
+            0% {transform: scale(1);}
+            50% {transform: scale(1.2);}
+            100% {transform: scale(1);}
+        }
+
+        .content {
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+
+        .content span {
+            font-weight: bold;
+            color: #E38E49;
+        }
+
+        .images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .images img {
+            width: calc(50%);
+        }
+
+        @media (max-width: 600px) {
+            .images img {
+                width: 100%;
+                height: auto;
+                aspect-ratio: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Kavias Lai (Kaz)</h1>
+        <p class="content">
+            Something <span>personal</span> is that I have a deep passion in Japanese music and culture, which inspired me study abroad in Japan during my Spring & Summer semester last year. <span>Professionally</span>, I am a senior majoring in IM&T and concentrating in web development and currently looking for a full-time job! Something <span>peculiar</span> about me is that, I am colorblind.
+        </p>
+        <div class="images">
+            <img src="../lab01/images/self.JPG" alt="self">
+            <img src="../lab01/images/japanex.JPG" alt="japan exchange">
+            <img src="../lab01/images/professional.jpg" alt="stock image of someone coding/working">
+            <img src="../lab01/images/ishihara_question_mark.png" alt="ishihara question mark">
+        </div>
+    </div>
+</body>
+</html>
