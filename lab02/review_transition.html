@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review: Transition</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    
+        .submit {
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 150px;
+            height: 50px;
+            border: 3px solid orange;
+            border-radius: 20px;
+            background-color: white;
+            color: orange;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+    
+        .submit:hover {
+            background-color: orange;
+            color: white;
+            transform: scale(1.2);
+        }
+    
+        .submit:focus:after {
+            content: '\2713';
+            position: absolute;
+            left: 37px;
+        }
+    
+        .submit:active {
+            background-color: orange;
+            color: white;
+            transform: scale(1.5);
+        }
+
+
+        .submit:focus {
+            background-color: orange;
+            color: white;
+        }
+        
+    
+
+    </style>
+</head>
+<body>
+    <button class="submit">Submit</button>
+</body>
+</html>
