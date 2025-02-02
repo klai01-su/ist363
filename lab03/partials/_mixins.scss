@@ -1,0 +1,29 @@
+@mixin recipe-box {
+    flex: 1;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+    }
+
+    h3 {
+        color: $melon;
+    }
+}
+
+@mixin margins {
+    margin: 20px 15px 30px 15px;
+}
+
+@mixin button-style {
+    background: $orange;
+    color: $white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}

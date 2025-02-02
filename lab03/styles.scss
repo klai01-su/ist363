@@ -1,0 +1,91 @@
+@import 'partials/variables';
+@import 'partials/reset';
+@import 'partials/mixins';
+
+body {
+    background-color: $white;
+    font-family: $main_font;
+    h1 {
+        color: $white;
+    }
+
+    h2 {
+        color: $melon;
+    }
+}
+
+%navbar {
+    color: $white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+header {
+    background-color: $orange;
+    padding: 10px;
+    text-align: center;
+    color: $white;
+
+    nav a {
+        @extend %navbar;
+        transition: all 0.3s ease;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.recipe-container {
+    display: flex;
+    gap: 15px;
+    @include margins;
+    
+    @media (max-width: 700px) {
+        flex-direction: column;
+    }
+}
+
+.recipe-box {
+    @include recipe-box;
+}
+
+.newsletter {
+    background: $lime;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    @include margins;
+}
+
+.about-us {
+    text-align: center;
+    @include margins;
+
+    img {
+        width: 100%;
+        border-radius: 10px;
+    }
+}
+
+input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+
+button {
+    @include button-style;
+}
+
+footer {
+    background: $mint;
+    color: $white;
+    padding: 20px;
+    text-align: center;
+    nav a {
+        @extend %navbar;
+    }
+}
