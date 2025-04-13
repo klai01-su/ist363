@@ -33,12 +33,18 @@ function App() {
   const [selectedPioneer, setSelectedPioneer] = useState(null);
 
   const handlePioneerClick = (id) => {
-    const updatedPioneers = pioneers.map(p =>
-      p.id === id ? { ...p, viewed: true } : p
-    );
-    setPioneers(updatedPioneers);
-    const clickedPioneer = updatedPioneers.find(p => p.id === id);
-    setSelectedPioneer(clickedPioneer);
+    const updatedList = pioneers.map((person) => {
+      if (person.id === id) {
+        return { ...person, viewed: true };
+      } else {
+        return person;
+      }
+    });
+
+    setPioneers(updatedList);
+
+    const clickedPerson = updatedList.find((person) => person.id === id);
+    setSelectedPioneer(clickedPerson);
   };
 
   const handleBack = () => {
@@ -48,17 +54,20 @@ function App() {
   return (
     <div className="container mt-4">
       <h1 className="mb-4">Internet Pioneers Bios</h1>
-      {selectedPioneer ? (
+      {selectedPioneer && (
         <Pioneer pioneer={selectedPioneer} onBack={handleBack} />
-      ) : (
+      )}
+      {!selectedPioneer && (
         <div className="row">
           {pioneers.map((pioneer) => (
             <div key={pioneer.id} className="col-md-4 mb-4" onClick={() => handlePioneerClick(pioneer.id)}>
               <div className="card h-100 position-relative">
                 {pioneer.viewed && (
-                  <span className="badge bg-danger position-absolute top-0 start-0">VIEWED</span>
+                  <span className="badge bg-danger position-absolute top-0 start-0">
+                    VIEWED
+                  </span>
                 )}
-                <img src={pioneer.image} className="card-img-top h-75 object-fit-cover" alt={pioneer.name}/>
+                <img src={pioneer.image} className="card-img-top h-100 object-fit-cover" alt={pioneer.name} />
                 <div className="card-body d-flex flex-column justify-content-between">
                   <h5 className="card-title text-center">{pioneer.name}</h5>
                 </div>
